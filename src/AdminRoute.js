@@ -6,7 +6,7 @@ const AdminRoute = ({ element }) => {
     const [isAdmin, setIsAdmin] = useState(null);
 
     useEffect(() => {
-        axios.get('http://192.168.50.59:5001/check-auth', { withCredentials: true })
+        axios.get('https://jingshin4-457d8aeb5d8c.herokuapp.com/check-auth', { withCredentials: true })
             .then(response => {
                 if (response.data.role === 'admin') {
                     setIsAdmin(true);

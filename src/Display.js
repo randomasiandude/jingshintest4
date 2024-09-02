@@ -24,7 +24,7 @@ const Display = () => {
     };
 
     const handleSearch = (page = 1) => {
-        axios.get('http://192.168.50.59:5000/search-orders', {
+        axios.get('https://jingshin4-457d8aeb5d8c.herokuapp.com/search-orders', {
             params: {
                 ...filters,
                 page,

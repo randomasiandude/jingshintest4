@@ -12,7 +12,7 @@ const Register = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://192.168.50.59:5001/register', { username, password, floor, name });
+            await axios.post('https://jingshin4-457d8aeb5d8c.herokuapp.com/register', { username, password, floor, name });
             setMessage('User registered successfully!');
         } catch (error) {
             setMessage('Registration failed. Try again.');

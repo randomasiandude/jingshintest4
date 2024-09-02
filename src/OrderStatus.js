@@ -33,7 +33,7 @@ const OrderStatus = ({ orderId, orderType }) => {
 
     const fetchStages = async () => {
         try {
-            const response = await axios.get(`http://192.168.50.59:5000/stages/${orderId}/${orderType}`);
+            const response = await axios.get(`https://jingshin4-457d8aeb5d8c.herokuapp.com/stages/${orderId}/${orderType}`);
             console.log('Fetched stages:', response.data); // Log the fetched data
             if (Array.isArray(response.data) && response.data.length > 0) {
                 setStages(response.data);
@@ -60,7 +60,10 @@ const OrderStatus = ({ orderId, orderType }) => {
 
         setIsAddingStage(true);
         try {
-            const response = await axios.post(`http://192.168.50.59:5000/stages`, {
+            const response = await axios.post(`https://jingshin4-457d8aeb5d8c.herokuapp.
+                
+                
+                /stages`, {
                 order_id: orderId,
                 order_type: orderType,
                 floor: newStage.floor,
@@ -92,7 +95,7 @@ const OrderStatus = ({ orderId, orderType }) => {
     
         try {
             // First update the database with the new start time
-            const response = await axios.put(`http://192.168.50.59:5000/stages/${stageId}/start`, { 
+            const response = await axios.put(`https://jingshin4-457d8aeb5d8c.herokuapp.com/stages/${stageId}/start`, { 
                 start_time: currentTime,
                 status: '生產中',
                 order_id: orderId, // Pass the order ID
@@ -144,7 +147,7 @@ const OrderStatus = ({ orderId, orderType }) => {
         setStages(updatedStages);
     
         try {
-            await axios.put(`http://192.168.50.59:5000/stages/${stageId}/end`, {
+            await axios.put(`https://jingshin4-457d8aeb5d8c.herokuapp.com/stages/${stageId}/end`, {
                 end_time: currentTime,
                 total_working_time: totalWorkingTimeFormatted,
                 status: '已結束',

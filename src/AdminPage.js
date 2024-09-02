@@ -8,7 +8,7 @@ const AdminPage = () => {
 
     useEffect(() => {
         // Fetch pending registrations when the component loads
-        axios.get('http://192.168.50.59:5001/pending-registrations', { withCredentials: true })
+        axios.get('https://jingshin4-457d8aeb5d8c.herokuapp.com/pending-registrations', { withCredentials: true })
             .then(response => {
                 setPendingRegistrations(response.data);
             })
@@ -19,7 +19,7 @@ const AdminPage = () => {
     
 
     const handleApprove = (user_id) => {
-        axios.post('http://192.168.50.59:5001/approve-user', { user_id })
+        axios.post('https://jingshin4-457d8aeb5d8c.herokuapp.com/approve-user', { user_id })
             .then(response => {
                 setMessage(response.data.message);
                 setPendingRegistrations(prev => prev.filter(user => user.user_id !== user_id));

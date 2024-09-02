@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Navbar from './Navbar';
 
 const Upload = () => {
     const [file, setFile] = useState(null);
@@ -15,7 +14,7 @@ const Upload = () => {
         const formData = new FormData();
         formData.append('file', file);
 
-        axios.post(`http://192.168.50.59:5000/upload`, formData, {
+        axios.post(`https://jingshin4-457d8aeb5d8c.herokuapp.com/upload`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

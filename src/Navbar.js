@@ -11,7 +11,7 @@ const Navbar = () => {
 
     useEffect(() => {
         // Check authentication status and role
-        axios.get('http://192.168.50.59:5001/check-auth', { withCredentials: true })
+        axios.get(`https://jingshin4-457d8aeb5d8c.herokuapp.com/check-auth`, { withCredentials: true })
             .then(response => {
                 setIsLoggedIn(true);
                 if (response.data.role === 'admin') {
@@ -47,7 +47,7 @@ const Navbar = () => {
     }, [isMenuOpen]);
 
     const handleLogout = () => {
-        axios.post('http://192.168.50.133:5001/logout', {}, { withCredentials: true })
+        axios.post(`https://jingshin4-457d8aeb5d8c.herokuapp.com/logout`, {}, { withCredentials: true })
             .then(response => {
                 setIsLoggedIn(false);
                 setIsAdmin(false);

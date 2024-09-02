@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './Form.css'; // Import the CSS file
 import OrderStatus from './OrderStatus'; // Import the OrderStatus component
-import Navbar from './Navbar';
 
 const Form = () => {
     const { order_id, order_type } = useParams();
@@ -12,7 +11,7 @@ const Form = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`http://192.168.50.59:5000/form/${order_id}/${order_type}`)
+        axios.get(`https://jingshin4-457d8aeb5d8c.herokuapp.com/form/${order_id}/${order_type}`)
             .then(response => {
                 console.log("Fetched order data:", response.data);
                 setOrder(response.data.order);  // Adjusted to access the `order` object in response data

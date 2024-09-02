@@ -12,7 +12,7 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        axios.post('http://192.168.50.59:5001/login', {
+        axios.post('https://jingshin4-457d8aeb5d8c.herokuapp.com/login', {
             identifier: username,
             password: password
         }, { withCredentials: true })

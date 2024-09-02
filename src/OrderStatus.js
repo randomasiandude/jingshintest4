@@ -60,10 +60,7 @@ const OrderStatus = ({ orderId, orderType }) => {
 
         setIsAddingStage(true);
         try {
-            const response = await axios.post(`https://jingshin4-457d8aeb5d8c.herokuapp.
-                
-                
-                /stages`, {
+            const response = await axios.post(`https://jingshin4-457d8aeb5d8c.herokuapp.com/stages`, {
                 order_id: orderId,
                 order_type: orderType,
                 floor: newStage.floor,

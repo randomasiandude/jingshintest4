@@ -38,5 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://jingshin4-457d8aeb5d8c.herokuapp.com"
 }

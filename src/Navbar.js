@@ -47,7 +47,7 @@ const Navbar = () => {
     }, [isMenuOpen]);
 
     const handleLogout = () => {
-        axios.post(`https://jingshin4-457d8aeb5d8c.herokuapp.com/logout`, {}, { withCredentials: true })
+        axios.post(`https://jingshin4-457d8aeb5d8c.herokuapp.com/`, {}, { withCredentials: true })
             .then(response => {
                 setIsLoggedIn(false);
                 setIsAdmin(false);
